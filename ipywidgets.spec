@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 6.0.0
-Release  : 2
+Release  : 3
 URL      : https://pypi.python.org/packages/99/26/daf5c44c8b2a4cbe80b4cafced8cc2c3c2a4b8f035e4ef53b037f47e8897/ipywidgets-6.0.0.tar.gz
 Source0  : https://pypi.python.org/packages/99/26/daf5c44c8b2a4cbe80b4cafced8cc2c3c2a4b8f035e4ef53b037f47e8897/ipywidgets-6.0.0.tar.gz
 Summary  : IPython HTML widgets for Jupyter
