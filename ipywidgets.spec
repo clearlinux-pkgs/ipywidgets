@@ -4,12 +4,13 @@
 #
 Name     : ipywidgets
 Version  : 7.0.0
-Release  : 4
+Release  : 5
 URL      : https://pypi.debian.net/ipywidgets/ipywidgets-7.0.0.tar.gz
 Source0  : https://pypi.debian.net/ipywidgets/ipywidgets-7.0.0.tar.gz
 Summary  : IPython HTML widgets for Jupyter
 Group    : Development/Tools
 License  : BSD-3-Clause-Clear
+Requires: ipywidgets-legacypython
 Requires: ipywidgets-python
 Requires: Sphinx
 Requires: ipykernel
@@ -29,9 +30,18 @@ BuildRequires : setuptools
 [![Documentation Status](http://readthedocs.org/projects/ipywidgets/badge/?version=latest)](https://ipywidgets.readthedocs.io/en/latest/?badge=latest)
 [![Join the chat at https://gitter.im/ipython/ipywidgets](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jupyter-widgets/Lobby)
 
+%package legacypython
+Summary: legacypython components for the ipywidgets package.
+Group: Default
+
+%description legacypython
+legacypython components for the ipywidgets package.
+
+
 %package python
 Summary: python components for the ipywidgets package.
 Group: Default
+Requires: ipywidgets-legacypython
 
 %description python
 python components for the ipywidgets package.
@@ -45,12 +55,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1503107809
+export SOURCE_DATE_EPOCH=1505004133
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1503107809
+export SOURCE_DATE_EPOCH=1505004133
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -61,7 +71,10 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files python
+%files legacypython
 %defattr(-,root,root,-)
 /usr/lib/python2*/*
+
+%files python
+%defattr(-,root,root,-)
 /usr/lib/python3*/*
