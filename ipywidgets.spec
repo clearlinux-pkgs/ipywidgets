@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.0.0
-Release  : 5
+Release  : 6
 URL      : https://pypi.debian.net/ipywidgets/ipywidgets-7.0.0.tar.gz
 Source0  : https://pypi.debian.net/ipywidgets/ipywidgets-7.0.0.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -55,12 +55,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505004133
+export SOURCE_DATE_EPOCH=1505420155
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1505004133
+export SOURCE_DATE_EPOCH=1505420155
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
