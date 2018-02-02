@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.1.0
-Release  : 12
+Release  : 13
 URL      : https://pypi.python.org/packages/bc/66/2d9e89347abb5ca7cf491b05aa549cb3aa00fb924735379ce0692eaca67d/ipywidgets-7.1.0.tar.gz
 Source0  : https://pypi.python.org/packages/bc/66/2d9e89347abb5ca7cf491b05aa549cb3aa00fb924735379ce0692eaca67d/ipywidgets-7.1.0.tar.gz
 Summary  : IPython HTML widgets for Jupyter
