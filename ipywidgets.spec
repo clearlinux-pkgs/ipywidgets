@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.1.2
-Release  : 15
+Release  : 16
 URL      : https://pypi.python.org/packages/00/6e/1bcda14078d8ebee6cff0c67ccba1a528a5ec636954ebe0af5fdebf9b6bf/ipywidgets-7.1.2.tar.gz
 Source0  : https://pypi.python.org/packages/00/6e/1bcda14078d8ebee6cff0c67ccba1a528a5ec636954ebe0af5fdebf9b6bf/ipywidgets-7.1.2.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -16,6 +16,8 @@ Requires: Sphinx
 Requires: ipykernel
 Requires: ipywidgets
 Requires: jupyter_client
+Requires: nbsphinx
+Requires: sphinx_rtd_theme
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
@@ -65,12 +67,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1518789589
+export SOURCE_DATE_EPOCH=1518817449
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1518789589
+export SOURCE_DATE_EPOCH=1518817449
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
