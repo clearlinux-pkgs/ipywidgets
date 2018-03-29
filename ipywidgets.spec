@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.1.2
-Release  : 16
+Release  : 17
 URL      : https://pypi.python.org/packages/00/6e/1bcda14078d8ebee6cff0c67ccba1a528a5ec636954ebe0af5fdebf9b6bf/ipywidgets-7.1.2.tar.gz
 Source0  : https://pypi.python.org/packages/00/6e/1bcda14078d8ebee6cff0c67ccba1a528a5ec636954ebe0af5fdebf9b6bf/ipywidgets-7.1.2.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -32,15 +32,6 @@ BuildRequires : setuptools
 [![Documentation Status](http://readthedocs.org/projects/ipywidgets/badge/?version=latest)](https://ipywidgets.readthedocs.io/en/latest/?badge=latest)
 [![Join the chat at https://gitter.im/ipython/ipywidgets](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jupyter-widgets/Lobby)
 
-%package legacypython
-Summary: legacypython components for the ipywidgets package.
-Group: Default
-Requires: python-core
-
-%description legacypython
-legacypython components for the ipywidgets package.
-
-
 %package python
 Summary: python components for the ipywidgets package.
 Group: Default
@@ -67,25 +58,18 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1518817449
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1522284259
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1518817449
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files legacypython
-%defattr(-,root,root,-)
-/usr/lib/python2*/*
 
 %files python
 %defattr(-,root,root,-)
