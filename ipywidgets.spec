@@ -20,7 +20,7 @@ Requires: nbsphinx
 Requires: sphinx_rtd_theme
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
