@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.3.0
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/e4/d8/9996057ad99ef601b526d4b3fcd30547c62153c3b6b4fe75d0f98983ae00/ipywidgets-7.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e4/d8/9996057ad99ef601b526d4b3fcd30547c62153c3b6b4fe75d0f98983ae00/ipywidgets-7.3.0.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1532271177
+export SOURCE_DATE_EPOCH=1532306598
 python3 setup.py build -b py3
 
 %install
