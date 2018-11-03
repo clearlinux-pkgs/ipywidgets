@@ -4,15 +4,15 @@
 #
 Name     : ipywidgets
 Version  : 7.4.2
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/88/8d/c5d3ac1bdcd74c7327c733c9d02354ff12d7d72744f262ed1e26560962b2/ipywidgets-7.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/88/8d/c5d3ac1bdcd74c7327c733c9d02354ff12d7d72744f262ed1e26560962b2/ipywidgets-7.4.2.tar.gz
 Summary  : IPython HTML widgets for Jupyter
 Group    : Development/Tools
 License  : BSD-3-Clause
-Requires: ipywidgets-python3
-Requires: ipywidgets-license
-Requires: ipywidgets-python
+Requires: ipywidgets-license = %{version}-%{release}
+Requires: ipywidgets-python = %{version}-%{release}
+Requires: ipywidgets-python3 = %{version}-%{release}
 Requires: Sphinx
 Requires: ipykernel
 Requires: ipywidgets
@@ -40,7 +40,7 @@ license components for the ipywidgets package.
 %package python
 Summary: python components for the ipywidgets package.
 Group: Default
-Requires: ipywidgets-python3
+Requires: ipywidgets-python3 = %{version}-%{release}
 
 %description python
 python components for the ipywidgets package.
@@ -63,13 +63,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536974474
+export SOURCE_DATE_EPOCH=1541266794
 python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/ipywidgets
-cp LICENSE %{buildroot}/usr/share/doc/ipywidgets/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/ipywidgets
+cp LICENSE %{buildroot}/usr/share/package-licenses/ipywidgets/LICENSE
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -79,8 +79,8 @@ echo ----[ mark ]----
 %defattr(-,root,root,-)
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/ipywidgets/LICENSE
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/ipywidgets/LICENSE
 
 %files python
 %defattr(-,root,root,-)
