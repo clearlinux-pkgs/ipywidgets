@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.4.2
-Release  : 37
+Release  : 38
 URL      : https://files.pythonhosted.org/packages/88/8d/c5d3ac1bdcd74c7327c733c9d02354ff12d7d72744f262ed1e26560962b2/ipywidgets-7.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/88/8d/c5d3ac1bdcd74c7327c733c9d02354ff12d7d72744f262ed1e26560962b2/ipywidgets-7.4.2.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -13,13 +13,6 @@ License  : BSD-3-Clause
 Requires: ipywidgets-license = %{version}-%{release}
 Requires: ipywidgets-python = %{version}-%{release}
 Requires: ipywidgets-python3 = %{version}-%{release}
-Requires: Sphinx
-Requires: ipykernel
-Requires: ipywidgets
-Requires: jupyter_client
-Requires: nbsphinx
-Requires: recommonmark
-Requires: sphinx_rtd_theme
 BuildRequires : buildreq-distutils3
 
 %description
@@ -63,7 +56,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541266794
+export SOURCE_DATE_EPOCH=1551027748
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
