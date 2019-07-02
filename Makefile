@@ -1,5 +1,5 @@
 PKG_NAME := ipywidgets
-URL = https://files.pythonhosted.org/packages/88/8d/c5d3ac1bdcd74c7327c733c9d02354ff12d7d72744f262ed1e26560962b2/ipywidgets-7.4.2.tar.gz
+URL = https://files.pythonhosted.org/packages/53/93/708cdb1feda1ec2d55ee9357d319a92f4d9adb61e5822a323aac9a6af8e6/ipywidgets-7.5.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
