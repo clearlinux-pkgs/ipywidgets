@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.5.1
-Release  : 44
+Release  : 45
 URL      : https://files.pythonhosted.org/packages/a3/74/e92a731b6afbf493b1fb898d0af8d0cfcf23e3f5a43ba139bf40ea426bbe/ipywidgets-7.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a3/74/e92a731b6afbf493b1fb898d0af8d0cfcf23e3f5a43ba139bf40ea426bbe/ipywidgets-7.5.1.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -44,6 +44,7 @@ python components for the ipywidgets package.
 Summary: python3 components for the ipywidgets package.
 Group: Default
 Requires: python3-core
+Provides: pypi(ipywidgets)
 
 %description python3
 python3 components for the ipywidgets package.
@@ -51,13 +52,15 @@ python3 components for the ipywidgets package.
 
 %prep
 %setup -q -n ipywidgets-7.5.1
+cd %{_builddir}/ipywidgets-7.5.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564500232
+export SOURCE_DATE_EPOCH=1583159649
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -73,7 +76,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/ipywidgets
-cp LICENSE %{buildroot}/usr/share/package-licenses/ipywidgets/LICENSE
+cp %{_builddir}/ipywidgets-7.5.1/LICENSE %{buildroot}/usr/share/package-licenses/ipywidgets/5dc7e0ef3878c3d4a92a7233208e6f91553de266
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -84,7 +87,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/ipywidgets/LICENSE
+/usr/share/package-licenses/ipywidgets/5dc7e0ef3878c3d4a92a7233208e6f91553de266
 
 %files python
 %defattr(-,root,root,-)
