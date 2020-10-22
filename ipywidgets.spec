@@ -4,7 +4,7 @@
 #
 Name     : ipywidgets
 Version  : 7.5.1
-Release  : 47
+Release  : 48
 URL      : https://files.pythonhosted.org/packages/a3/74/e92a731b6afbf493b1fb898d0af8d0cfcf23e3f5a43ba139bf40ea426bbe/ipywidgets-7.5.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a3/74/e92a731b6afbf493b1fb898d0af8d0cfcf23e3f5a43ba139bf40ea426bbe/ipywidgets-7.5.1.tar.gz
 Summary  : IPython HTML widgets for Jupyter
@@ -45,6 +45,11 @@ Summary: python3 components for the ipywidgets package.
 Group: Default
 Requires: python3-core
 Provides: pypi(ipywidgets)
+Requires: pypi(ipykernel)
+Requires: pypi(ipython)
+Requires: pypi(nbformat)
+Requires: pypi(traitlets)
+Requires: pypi(widgetsnbextension)
 
 %description python3
 python3 components for the ipywidgets package.
@@ -59,15 +64,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583159649
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603393587
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
